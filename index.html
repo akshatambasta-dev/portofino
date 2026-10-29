@@ -15,5 +15,16 @@
   <body class="bg-[#050505] text-[#F0EEE8] selection:bg-[#F0EEE8]/20 selection:text-[#F0EEE8] overflow-x-hidden antialiased">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Fallback redirect for static CDN environments serving repository root
+      window.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          var root = document.getElementById('root');
+          if (root && root.children.length === 0 && !window.location.pathname.includes('/dist')) {
+            window.location.replace('./dist/' + window.location.search + window.location.hash);
+          }
+        }, 300);
+      });
+    </script>
   </body>
 </html>
