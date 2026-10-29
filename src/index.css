@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #050505;
+    --bg-secondary: #111111;
+    --bg-surface: #171717;
+    --text-primary: #F0EEE8;
+    --text-secondary: #A9A9A9;
+    --border-subtle: #303030;
+    --highlight-silver: #D4D0C8;
+    --font-editorial: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Inter', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    letter-spacing: -0.02em;
+  }
+
+  .font-editorial {
+    font-family: var(--font-editorial);
+    letter-spacing: -0.01em;
+  }
+
+  code, pre, .font-mono, [data-mono] {
+    font-family: var(--font-mono);
+  }
+
+  /* Monochromatic scrollbar */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #050505;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #303030;
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #505050;
+  }
+}
+
+/* Subtle architectural grid */
+.bg-subtle-grid {
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, rgba(240, 238, 232, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(240, 238, 232, 0.02) 1px, transparent 1px);
+}
+
+/* Muted silver glow */
+.glow-silver {
+  text-shadow: 0 0 20px rgba(240, 238, 232, 0.35);
+}
+
+.border-subtle {
+  border-color: #303030;
+}
